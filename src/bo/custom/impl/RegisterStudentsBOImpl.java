@@ -7,8 +7,11 @@ import dao.custom.StudentDAO;
 import dao.custom.StudentProgramDAO;
 import dto.ProgramDTO;
 import dto.StudentDTO;
+import dto.StudentProgramDTO;
 import entity.Program;
 import entity.Student;
+
+import java.util.ArrayList;
 
 public class RegisterStudentsBOImpl implements RegisterStudentsBO {
     ProgramDAO programDAO = (ProgramDAO) DAOFactory.getInstance().getDAO(DAOFactory.DAOType.PROGRAM);
@@ -24,5 +27,20 @@ public class RegisterStudentsBOImpl implements RegisterStudentsBO {
     public ProgramDTO getProgram(String pId) {
         Program program = programDAO.get(pId);
         return new ProgramDTO(program.getpId(), program.getName(), program.getDuration(), program.getFee());
+    }
+
+    @Override
+    public String getStudentId(String nic) {
+        return studentDAO.getId(/*nic*/);
+    }
+
+    @Override
+    public ArrayList<String> getProgramIds() {
+        return null;
+    }
+
+    @Override
+    public ArrayList<StudentProgramDTO> getStudentPrograms(String sId) {
+        return null;
     }
 }

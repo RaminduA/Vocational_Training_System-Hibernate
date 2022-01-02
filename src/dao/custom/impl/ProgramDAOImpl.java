@@ -4,9 +4,9 @@ import dao.custom.ProgramDAO;
 import entity.Program;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.hibernate.query.Query;
 import util.FactoryConfiguration;
 
-import javax.persistence.Query;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -66,10 +66,8 @@ public class ProgramDAOImpl implements ProgramDAO {
         Session session = FactoryConfiguration.getInstance().getSession();
         Transaction transaction = session.beginTransaction();
 
-        List<Program> programList = null;
-
-        Query query=session.createQuery("from Program");
-        programList = query.getResultList();
+        Query query=session.createQuery("FROM Program");
+        List<Program> programList = query.list();
 
         transaction.commit();
         session.close();

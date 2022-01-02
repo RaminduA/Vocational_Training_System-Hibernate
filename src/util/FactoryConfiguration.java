@@ -5,17 +5,23 @@ import entity.Student;
 import entity.StudentProgram;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.boot.Metadata;
+import org.hibernate.boot.MetadataSources;
+import org.hibernate.boot.registry.StandardServiceRegistry;
+import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 
 public class FactoryConfiguration {
     private static FactoryConfiguration factoryConfig;
-    private final SessionFactory factory;
+    private final SessionFactory sessionFactory;
 
-    private FactoryConfiguration(){
-        factory = new Configuration().configure()
+    private FactoryConfiguration() {
+        StandardServiceRegistry stg = new StandardServiceRegistryBuilder().loadProperties("hibernate.properties").build();
+        Metadata metadata = new MetadataSources(stg)
                 .addAnnotatedClass(Student.class)
                 .addAnnotatedClass(Program.class)
-                .addAnnotatedClass(StudentProgram.class).buildSessionFactory();
+                .addAnnotatedClass(StudentProgram.class).getMetadataBuilder().build();
+        sessionFactory = metadata.getSessionFactoryBuilder().build();
     }
 
     public static FactoryConfiguration getInstance(){
@@ -23,6 +29,6 @@ public class FactoryConfiguration {
     }
 
     public Session getSession(){
-        return factory.openSession();
+        return sessionFactory.openSession();
     }
 }

@@ -15,7 +15,7 @@ public class AddProgramsBOImpl implements AddProgramsBO {
 
     @Override
     public boolean addProgram(ProgramDTO programDTO) {
-        return programDAO.add(new Program(programDTO.getpId(), programDTO.getName(), programDTO.getDuration(), programDTO.getFee()));
+        return programDAO.add(new Program(programDTO.getId(), programDTO.getName(), programDTO.getDuration(), programDTO.getFee()));
     }
 
     @Override
@@ -25,6 +25,6 @@ public class AddProgramsBOImpl implements AddProgramsBO {
         for(Program program : programList){
             programs.add(new ProgramDTO(program.getpId(), program.getName(), program.getDuration(), program.getFee()));
         }
-        return null;
+        return programs;
     }
 }

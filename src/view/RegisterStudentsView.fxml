@@ -119,7 +119,7 @@
       </Label>
       <AnchorPane layoutX="80.0" layoutY="548.0" prefHeight="53.0" prefWidth="280.0" styleClass="textPane" stylesheets="@../assets/styles/TextFieldStyles.css">
          <children>
-            <TextField fx:id="txtProgramId" layoutX="13.0" layoutY="5.0" prefHeight="44.0" prefWidth="250.0" promptText="CT0301" styleClass="textField">
+            <TextField fx:id="txtProgramId" editable="false" layoutX="13.0" layoutY="5.0" prefHeight="44.0" prefWidth="250.0" promptText="CT0301" styleClass="textField">
                <font>
                   <Font size="19.0" />
                </font>
@@ -145,7 +145,7 @@
       </AnchorPane>
       <AnchorPane layoutX="800.0" layoutY="548.0" prefHeight="53.0" prefWidth="280.0" styleClass="textPane" stylesheets="@../assets/styles/TextFieldStyles.css">
          <children>
-            <TextField fx:id="txtDuration" layoutX="13.0" layoutY="5.0" prefHeight="44.0" prefWidth="250.0" promptText="1 year" styleClass="textField">
+            <TextField fx:id="txtDuration" editable="false" layoutX="13.0" layoutY="5.0" prefHeight="44.0" prefWidth="250.0" promptText="1 year" styleClass="textField">
                <font>
                   <Font size="19.0" />
                </font>
@@ -160,7 +160,7 @@
       </AnchorPane>
       <AnchorPane layoutX="1160.0" layoutY="548.0" prefHeight="53.0" prefWidth="280.0" styleClass="textPane" stylesheets="@../assets/styles/TextFieldStyles.css">
          <children>
-            <TextField fx:id="txtFee" layoutX="13.0" layoutY="5.0" prefHeight="44.0" prefWidth="250.0" promptText="100,000.00" styleClass="textField">
+            <TextField fx:id="txtFee" editable="false" layoutX="13.0" layoutY="5.0" prefHeight="44.0" prefWidth="250.0" promptText="100,000.00" styleClass="textField">
                <font>
                   <Font size="19.0" />
                </font>

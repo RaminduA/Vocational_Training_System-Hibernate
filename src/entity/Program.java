@@ -44,7 +44,7 @@ public class Program implements SuperEntity{
     public String getName() {
         return name;
     }
-    public void setName(String pName) {
+    public void setName(String name) {
         this.name = name;
     }
 

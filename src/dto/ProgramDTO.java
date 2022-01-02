@@ -6,7 +6,7 @@ import java.util.List;
 
 public class ProgramDTO implements SuperEntity {
 
-    private String pId;
+    private String id;
     private String name;
     private String duration;
     private double fee;
@@ -16,32 +16,32 @@ public class ProgramDTO implements SuperEntity {
     public ProgramDTO() {
     }
 
-    public ProgramDTO(String pId, String name, String duration, double fee) {
-        this.setpId(pId);
+    public ProgramDTO(String id, String name, String duration, double fee) {
+        this.setId(id);
         this.setName(name);
         this.setDuration(duration);
         this.setFee(fee);
     }
 
-    public ProgramDTO(String pId, String name, String duration, double fee, List<StudentProgramDTO> details) {
-        this.setpId(pId);
+    public ProgramDTO(String id, String name, String duration, double fee, List<StudentProgramDTO> details) {
+        this.setId(id);
         this.setName(name);
         this.setDuration(duration);
         this.setFee(fee);
         this.setDetails(details);
     }
 
-    public String getpId() {
-        return pId;
+    public String getId() {
+        return id;
     }
-    public void setpId(String pId) {
-        this.pId = pId;
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getName() {
         return name;
     }
-    public void setName(String pName) {
+    public void setName(String name) {
         this.name = name;
     }
 
@@ -69,7 +69,7 @@ public class ProgramDTO implements SuperEntity {
     @Override
     public String toString() {
         return "Program{" +
-                "pId='" + getpId() + '\'' +
+                "id='" + getId() + '\'' +
                 ", name='" + getName() + '\'' +
                 ", duration='" + getDuration() + '\'' +
                 ", fee='" + getFee() + '\'' +
