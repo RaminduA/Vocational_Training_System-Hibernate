@@ -1,4 +1,7 @@
 package dao.custom;
 
-public interface StudentProgramDAO {
+import dao.CrudDAO;
+import entity.StudentProgram;
+
+public interface StudentProgramDAO extends CrudDAO<StudentProgram> {
 }

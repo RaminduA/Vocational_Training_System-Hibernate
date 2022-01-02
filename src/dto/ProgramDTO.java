@@ -9,21 +9,21 @@ public class ProgramDTO implements SuperEntity {
     private String pId;
     private String name;
     private String duration;
-    private String fee;
+    private double fee;
 
     private List<StudentProgramDTO> details;
 
     public ProgramDTO() {
     }
 
-    public ProgramDTO(String pId, String name, String duration, String fee) {
+    public ProgramDTO(String pId, String name, String duration, double fee) {
         this.setpId(pId);
         this.setName(name);
         this.setDuration(duration);
         this.setFee(fee);
     }
 
-    public ProgramDTO(String pId, String name, String duration, String fee, List<StudentProgramDTO> details) {
+    public ProgramDTO(String pId, String name, String duration, double fee, List<StudentProgramDTO> details) {
         this.setpId(pId);
         this.setName(name);
         this.setDuration(duration);
@@ -52,10 +52,10 @@ public class ProgramDTO implements SuperEntity {
         this.duration = duration;
     }
 
-    public String getFee() {
+    public double getFee() {
         return fee;
     }
-    public void setFee(String fee) {
+    public void setFee(double fee) {
         this.fee = fee;
     }
 
