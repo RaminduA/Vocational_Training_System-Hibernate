@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="dashboardContext" prefHeight="1080.0" prefWidth="1920.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.DashboardViewController">
+   <children>
+      <AnchorPane fx:id="performanceContext" layoutX="400.0" layoutY="100.0" prefHeight="980.0" prefWidth="1520.0" style="-fx-background-color: white;" />
+      <AnchorPane prefHeight="100.0" prefWidth="1920.0" style="-fx-background-color: #b8d5ff;">
+         <children>
+            <Label fx:id="lblDate" layoutX="629.0" layoutY="21.0" prefHeight="54.0" prefWidth="690.0" text="Wednesday, 15 September 2020" textFill="#1c3148">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="40.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblTime" alignment="CENTER" layoutX="1388.0" layoutY="21.0" prefHeight="56.0" prefWidth="264.0" text="10:59:35 PM" textFill="#1c3148">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="40.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="sidePanel" layoutX="-1.0" prefHeight="1080.0" prefWidth="401.0" style="-fx-background-color: #1D4A99;">
+         <children>
+            <AnchorPane layoutX="1.0" prefHeight="100.0" prefWidth="400.0" style="-fx-background-color: #b8d5ff;">
+               <children>
+                  <ImageView fitHeight="95.0" fitWidth="182.0" layoutX="56.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assets/images/sipsewanaLogo.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="161.0" layoutY="15.0" prefHeight="10.0" prefWidth="115.0" text="SIPSEWANA" textFill="#1c3148">
+                     <font>
+                        <Font name="Arial Black" size="17.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="161.0" layoutY="38.0" prefHeight="10.0" prefWidth="131.0" text="VOCATIONAL" textFill="#1e6392">
+                     <font>
+                        <Font name="Arial Black" size="17.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="161.0" layoutY="61.0" prefHeight="10.0" prefWidth="149.0" text="TRAINING" textFill="#1c3148">
+                     <font>
+                        <Font name="Arial Black" size="17.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="133.0" layoutY="140.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/images/avatar.png" />
+               </image>
+            </ImageView>
+            <Label alignment="CENTER" layoutX="45.0" layoutY="278.0" prefHeight="33.0" prefWidth="304.0" text="Coordinator" textFill="WHITE">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="40.0" />
+               </font>
+            </Label>
+            <JFXButton fx:id="btnLogout" alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" layoutX="74.0" layoutY="928.0" onAction="#backToLoginForm" prefHeight="56.0" prefWidth="242.0" ripplerFill="#1d4a99" style="-fx-background-color: #2c59a7;" text="LOGOUT" textFill="WHITE">
+               <font>
+                  <Font name="Yu Gothic UI Semibold" size="22.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </JFXButton>
+            <JFXButton fx:id="btnRegisterStudents" alignment="BASELINE_LEFT" buttonType="RAISED" contentDisplay="CENTER" layoutX="1.0" layoutY="391.0" onAction="#registerStudentsOnAction" prefHeight="85.0" prefWidth="400.0" ripplerFill="#1d4a99" style="-fx-background-color: #2c59a7;" text="Register New Students" textFill="WHITE">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="25.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <padding>
+                  <Insets left="90.0" />
+               </padding>
+               <graphic>
+                  <FontAwesomeIconView accessibleRole="BUTTON" fill="WHITE" glyphName="GRADUATION_CAP" size="32" strokeType="INSIDE" translateX="-181.0" />
+               </graphic>
+            </JFXButton>
+            <JFXButton fx:id="btnAddPrograms" alignment="BASELINE_LEFT" buttonType="RAISED" contentDisplay="CENTER" layoutY="480.0" onAction="#addProgramsOnAction" prefHeight="85.0" prefWidth="400.0" ripplerFill="#1d4a99" style="-fx-background-color: #2c59a7;" text="Add New Programs" textFill="WHITE">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="25.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <padding>
+                  <Insets left="90.0" />
+               </padding>
+               <graphic>
+                  <FontAwesomeIconView accessibleRole="BUTTON" fill="WHITE" glyphName="WRENCH" size="35" strokeType="INSIDE" textAlignment="JUSTIFY" translateX="-160.0" />
+               </graphic>
+            </JFXButton>
+            <JFXButton fx:id="btnViewStudentDetails" alignment="BASELINE_LEFT" buttonType="RAISED" contentDisplay="CENTER" layoutY="569.0" onAction="#viewStudentDetailsOnAction" prefHeight="85.0" prefWidth="400.0" ripplerFill="#1d4a99" style="-fx-background-color: #2c59a7;" text="View Student Details" textFill="WHITE">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="25.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <padding>
+                  <Insets left="90.0" />
+               </padding>
+               <graphic>
+                  <FontAwesomeIconView accessibleRole="BUTTON" fill="WHITE" glyphName="STREET_VIEW" size="36" strokeType="INSIDE" translateX="-167.0" />
+               </graphic>
+            </JFXButton>
+            <Label layoutX="18.0" layoutY="1041.0" prefHeight="33.0" prefWidth="141.0" text="VERSION 1.0.0" textFill="#ecf5ff">
+               <font>
+                  <Font name="System Italic" size="20.0" />
+               </font>
+            </Label>
+            <JFXButton fx:id="btnManagePrograms" alignment="BASELINE_LEFT" buttonType="RAISED" contentDisplay="CENTER" layoutY="658.0" onAction="#manageProgramsOnAction" prefHeight="85.0" prefWidth="400.0" ripplerFill="#1d4a99" style="-fx-background-color: #2c59a7;" text="Manage Programs" textFill="WHITE">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="25.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <padding>
+                  <Insets left="90.0" />
+               </padding>
+               <graphic>
+                  <FontAwesomeIconView accessibleRole="BUTTON" fill="WHITE" glyphName="TASKS" size="31" strokeType="INSIDE" translateX="-156.0" />
+               </graphic>
+            </JFXButton>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
