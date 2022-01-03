@@ -22,9 +22,24 @@
             <Font name="Arial Rounded MT Bold" size="40.0" />
          </font>
       </Label>
-      <AnchorPane layoutX="118.0" layoutY="150.0" prefHeight="53.0" prefWidth="350.0" styleClass="textPane" stylesheets="@../assets/styles/TextFieldStyles.css">
+      <AnchorPane layoutX="80.0" layoutY="150.0" prefHeight="53.0" prefWidth="280.0" styleClass="textPane" stylesheets="@../assets/styles/TextFieldStyles.css">
          <children>
-            <TextField fx:id="txtName" layoutX="13.0" layoutY="5.0" prefHeight="44.0" prefWidth="320.0" promptText="Mahela Jayawardene" styleClass="textField">
+            <TextField fx:id="txtStudentId" layoutX="13.0" layoutY="5.0" prefHeight="44.0" prefWidth="250.0" promptText="ST0007" styleClass="textField">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </TextField>
+            <Label layoutX="13.0" layoutY="-10.0" prefHeight="14.0" prefWidth="86.0" style="-fx-background-color: #FFFFFF;">
+               <font>
+                  <Font size="1.0" />
+               </font>
+            </Label>
+            <Label layoutX="13.0" layoutY="-9.0" styleClass="textLabel" text="Student ID" />
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="440.0" layoutY="150.0" prefHeight="53.0" prefWidth="280.0" styleClass="textPane" stylesheets="@../assets/styles/TextFieldStyles.css">
+         <children>
+            <TextField fx:id="txtName" layoutX="13.0" layoutY="5.0" prefHeight="44.0" prefWidth="250.0" promptText="Mahela Jayawardene" styleClass="textField">
                <font>
                   <Font size="19.0" />
                </font>
@@ -37,9 +52,9 @@
             <Label layoutX="13.0" layoutY="-9.0" styleClass="textLabel" text="Name" />
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="586.0" layoutY="150.0" prefHeight="53.0" prefWidth="350.0" styleClass="textPane" stylesheets="@../assets/styles/TextFieldStyles.css">
+      <AnchorPane layoutX="800.0" layoutY="150.0" prefHeight="53.0" prefWidth="280.0" styleClass="textPane" stylesheets="@../assets/styles/TextFieldStyles.css">
          <children>
-            <TextField fx:id="txtDOB" layoutX="13.0" layoutY="5.0" prefHeight="44.0" prefWidth="320.0" promptText="17/07/2000" styleClass="textField">
+            <TextField fx:id="txtDOB" layoutX="13.0" layoutY="5.0" prefHeight="44.0" prefWidth="250.0" promptText="17/07/2000" styleClass="textField">
                <font>
                   <Font size="19.0" />
                </font>
@@ -52,9 +67,9 @@
             <Label layoutX="13.0" layoutY="-9.0" styleClass="textLabel" text="Date of Birth" />
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="1054.0" layoutY="150.0" prefHeight="53.0" prefWidth="350.0" styleClass="textPane" stylesheets="@../assets/styles/TextFieldStyles.css">
+      <AnchorPane layoutX="1160.0" layoutY="150.0" prefHeight="53.0" prefWidth="280.0" styleClass="textPane" stylesheets="@../assets/styles/TextFieldStyles.css">
          <children>
-            <TextField fx:id="txtNIC" layoutX="13.0" layoutY="5.0" prefHeight="44.0" prefWidth="320.0" promptText="200019901197" styleClass="textField">
+            <TextField fx:id="txtNIC" layoutX="13.0" layoutY="5.0" prefHeight="44.0" prefWidth="250.0" promptText="200019901197" styleClass="textField">
                <font>
                   <Font size="19.0" />
                </font>
@@ -119,17 +134,13 @@
       </Label>
       <AnchorPane layoutX="80.0" layoutY="548.0" prefHeight="53.0" prefWidth="280.0" styleClass="textPane" stylesheets="@../assets/styles/TextFieldStyles.css">
          <children>
-            <TextField fx:id="txtProgramId" editable="false" layoutX="13.0" layoutY="5.0" prefHeight="44.0" prefWidth="250.0" promptText="CT0301" styleClass="textField">
-               <font>
-                  <Font size="19.0" />
-               </font>
-            </TextField>
             <Label layoutX="13.0" layoutY="-10.0" prefHeight="14.0" prefWidth="91.0" style="-fx-background-color: #FFFFFF;">
                <font>
                   <Font size="1.0" />
                </font>
             </Label>
             <Label layoutX="13.0" layoutY="-9.0" styleClass="textLabel" text="Program ID" />
+            <ComboBox fx:id="cmbProgramId" layoutX="13.0" layoutY="5.0" prefHeight="44.0" prefWidth="250.0" promptText="CT0301" styleClass="combo-box" />
          </children>
       </AnchorPane>
       <AnchorPane layoutX="440.0" layoutY="548.0" prefHeight="53.0" prefWidth="280.0" styleClass="textPane" stylesheets="@../assets/styles/TextFieldStyles.css">
@@ -140,7 +151,11 @@
                </font>
             </Label>
             <Label layoutX="13.0" layoutY="-9.0" styleClass="textLabel" text="Program" />
-            <ComboBox fx:id="cmbProgram" layoutX="13.0" layoutY="5.0" prefHeight="44.0" prefWidth="250.0" promptText="Motor Mechanics" styleClass="combo-box" />
+            <TextField fx:id="txtProgram" editable="false" layoutX="13.0" layoutY="5.0" prefHeight="44.0" prefWidth="250.0" promptText="Motor Mechanics" styleClass="textField">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </TextField>
          </children>
       </AnchorPane>
       <AnchorPane layoutX="800.0" layoutY="548.0" prefHeight="53.0" prefWidth="280.0" styleClass="textPane" stylesheets="@../assets/styles/TextFieldStyles.css">

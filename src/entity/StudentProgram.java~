@@ -20,11 +20,6 @@ public class StudentProgram implements SuperEntity{
     public StudentProgram() {
     }
 
-    public StudentProgram(String date, Program program, Student student) {
-        this.setDate(date);
-        this.setProgram(program);
-        this.setStudent(student);
-    }
     public StudentProgram(String spId, String date, Program program, Student student) {
         this.setSpId(spId);
         this.setDate(date);

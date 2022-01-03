@@ -9,8 +9,9 @@ import java.util.ArrayList;
 
 public interface RegisterStudentsBO extends SuperBO {
     public boolean addStudent(StudentDTO studentDTO);
+    public boolean addStudentProgram(StudentProgramDTO studentProgramDTO);
     public ProgramDTO getProgram(String pId);
-    public String getStudentId(String nic);
+    public String getStudentId();
     public ArrayList<String> getProgramIds();
     public ArrayList<StudentProgramDTO> getStudentPrograms(String sId);
 }

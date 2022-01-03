@@ -13,6 +13,12 @@ public class StudentProgramDTO implements SuperEntity {
     public StudentProgramDTO() {
     }
 
+    public StudentProgramDTO(String date, ProgramDTO program, StudentDTO student) {
+        this.setDate(date);
+        this.setProgram(program);
+        this.setStudent(student);
+    }
+
     public StudentProgramDTO(String spId, String date, ProgramDTO program, StudentDTO student) {
         this.setSpId(spId);
         this.setDate(date);

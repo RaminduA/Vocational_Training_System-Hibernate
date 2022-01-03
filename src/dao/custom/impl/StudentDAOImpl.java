@@ -1,7 +1,13 @@
 package dao.custom.impl;
 
 import dao.custom.StudentDAO;
+import entity.Program;
 import entity.Student;
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+import org.hibernate.query.NativeQuery;
+import org.hibernate.query.Query;
+import util.FactoryConfiguration;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,22 +16,51 @@ public class StudentDAOImpl implements StudentDAO {
 
     @Override
     public boolean add(Student student) {
-        return false;
+        Session session = FactoryConfiguration.getInstance().getSession();
+        Transaction transaction = session.beginTransaction();
+
+        session.save(student);
+
+        transaction.commit();
+        session.close();
+        return true;
     }
 
     @Override
     public boolean update(Student student) {
-        return false;
+        Session session = FactoryConfiguration.getInstance().getSession();
+        Transaction transaction = session.beginTransaction();
+
+        session.update(student);
+
+        transaction.commit();
+        session.close();
+        return true;
     }
 
     @Override
     public boolean delete(String id) {
-        return false;
+        Session session = FactoryConfiguration.getInstance().getSession();
+        Transaction transaction = session.beginTransaction();
+
+        Student student = session.load(Student.class, id);
+        session.delete(student);
+
+        transaction.commit();
+        session.close();
+        return true;
     }
 
     @Override
     public Student get(String id) {
-        return null;
+        Session session = FactoryConfiguration.getInstance().getSession();
+        Transaction transaction = session.beginTransaction();
+
+        Student student = session.get(Student.class, id);
+
+        transaction.commit();
+        session.close();
+        return student;
     }
 
     @Override
@@ -35,8 +70,20 @@ public class StudentDAOImpl implements StudentDAO {
 
     @Override
     public String getId() {
-        return null;
+        Session session = FactoryConfiguration.getInstance().getSession();
+        Transaction transaction = session.beginTransaction();
+
+        NativeQuery query=session.createSQLQuery("SELECT sId FROM Student ORDER BY sId DESC LIMIT 1");
+        query.addEntity(Student.class);
+        List<String> lastId = query.list();
+
+        transaction.commit();
+        session.close();
+
+        System.out.println(lastId);
+        return lastId.size()==0? null:lastId.get(0);
     }
+
 
     @Override
     public List<String> getAllIds() {

@@ -1,8 +1,6 @@
 package entity;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 import java.util.List;
 
 @Entity
@@ -13,7 +11,7 @@ public class Program implements SuperEntity{
     private String duration;
     private double fee;
 
-    @OneToMany(mappedBy = "program")
+    @OneToMany(mappedBy = "program", cascade = CascadeType.ALL ,fetch= FetchType.EAGER)
     private List<StudentProgram> details;
 
     public Program() {

@@ -54,7 +54,7 @@ public class ProgramDAOImpl implements ProgramDAO {
         Session session = FactoryConfiguration.getInstance().getSession();
         Transaction transaction = session.beginTransaction();
 
-        Program program=session.load(Program.class, id);
+        Program program=session.get(Program.class, id);
 
         transaction.commit();
         session.close();
@@ -80,7 +80,15 @@ public class ProgramDAOImpl implements ProgramDAO {
     }
 
     @Override
-    public ArrayList<String> getAllIds() {
-        return null;
+    public List<String> getAllIds() {
+        Session session = FactoryConfiguration.getInstance().getSession();
+        Transaction transaction = session.beginTransaction();
+
+        Query query=session.createQuery("SELECT pId FROM Program");
+        List<String> idList = query.list();
+
+        transaction.commit();
+        session.close();
+        return idList;
     }
 }

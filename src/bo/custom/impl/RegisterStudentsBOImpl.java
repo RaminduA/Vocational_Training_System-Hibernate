@@ -10,8 +10,10 @@ import dto.StudentDTO;
 import dto.StudentProgramDTO;
 import entity.Program;
 import entity.Student;
+import entity.StudentProgram;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class RegisterStudentsBOImpl implements RegisterStudentsBO {
     ProgramDAO programDAO = (ProgramDAO) DAOFactory.getInstance().getDAO(DAOFactory.DAOType.PROGRAM);
@@ -24,19 +26,32 @@ public class RegisterStudentsBOImpl implements RegisterStudentsBO {
     }
 
     @Override
+    public boolean addStudentProgram(StudentProgramDTO studentProgramDTO) {
+        return studentProgramDAO.add(new StudentProgram(studentProgramDTO.getDate(), programDAO.get(studentProgramDTO.getProgram().getId()), studentDAO.get(studentProgramDTO.getStudent().getsId())));
+    }
+
+    @Override
     public ProgramDTO getProgram(String pId) {
         Program program = programDAO.get(pId);
         return new ProgramDTO(program.getpId(), program.getName(), program.getDuration(), program.getFee());
     }
 
     @Override
-    public String getStudentId(String nic) {
-        return studentDAO.getId(/*nic*/);
+    public String getStudentId() {
+        String lastId=studentDAO.getId();
+        if (lastId!=null) {
+            int index=Integer.parseInt(lastId.split("T")[1]);
+            ++index;
+            return (index<10)? "ST000"+index : (index<100)? "ST00"+index : (index<1000)? "ST0"+index : "ST"+index ;
+        }else{
+            return "ST0001";
+        }
     }
 
     @Override
     public ArrayList<String> getProgramIds() {
-        return null;
+        List<String> ids = programDAO.getAllIds();
+        return new ArrayList<>(ids);
     }
 
     @Override
