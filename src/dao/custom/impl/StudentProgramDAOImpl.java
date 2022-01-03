@@ -6,6 +6,7 @@ import entity.Student;
 import entity.StudentProgram;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.hibernate.query.Query;
 import util.FactoryConfiguration;
 
 import java.util.ArrayList;
@@ -39,6 +40,11 @@ public class StudentProgramDAOImpl implements StudentProgramDAO {
 
     @Override
     public boolean delete(String id) {
+        return false;
+    }
+
+    @Override
+    public boolean delete(int id) {
         Session session = FactoryConfiguration.getInstance().getSession();
         Transaction transaction = session.beginTransaction();
 
@@ -64,7 +70,15 @@ public class StudentProgramDAOImpl implements StudentProgramDAO {
 
     @Override
     public List<StudentProgram> getAll() {
-        return null;
+        Session session = FactoryConfiguration.getInstance().getSession();
+        Transaction transaction = session.beginTransaction();
+
+        Query query=session.createQuery("FROM StudentProgram ");
+        List<StudentProgram> studentProgramList = query.list();
+
+        transaction.commit();
+        session.close();
+        return studentProgramList;
     }
 
     @Override

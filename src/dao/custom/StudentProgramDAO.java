@@ -4,4 +4,5 @@ import dao.CrudDAO;
 import entity.StudentProgram;
 
 public interface StudentProgramDAO extends CrudDAO<StudentProgram> {
+    boolean delete(int id);
 }
