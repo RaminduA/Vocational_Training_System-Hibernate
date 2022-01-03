@@ -66,7 +66,8 @@ public class RegisterStudentsViewController {
         ProgramDTO program=new ProgramDTO(cmbProgramId.getValue(), txtProgram.getText(), txtDuration.getText(), Double.parseDouble(txtFee.getText()));
         StudentProgramDTO studentProgram=new StudentProgramDTO(new SimpleDateFormat("dd-MM-yyyy").format(new Date()), program, student);
         if (registerStudentsBO.isExistStudent(txtStudentId.getText())) {
-            student=registerStudentsBO.
+            student=registerStudentsBO.getStudent(txtStudentId.getText());
+            studentProgram.setStudent(student);
             if (registerStudentsBO.addStudentProgram(studentProgram)) {
                 new Alert(Alert.AlertType.CONFIRMATION,"Registered...").show();
                 clearAllFields();

@@ -9,7 +9,7 @@ import javax.persistence.ManyToOne;
 public class StudentProgram implements SuperEntity{
     @Id
     @GeneratedValue
-    private String spId;
+    private int spId;
     private String date;
 
     @ManyToOne
@@ -25,17 +25,17 @@ public class StudentProgram implements SuperEntity{
         this.setProgram(program);
         this.setStudent(student);
     }
-    public StudentProgram(String spId, String date, Program program, Student student) {
+    public StudentProgram(int spId, String date, Program program, Student student) {
         this.setSpId(spId);
         this.setDate(date);
         this.setProgram(program);
         this.setStudent(student);
     }
 
-    public String getSpId() {
+    public int getSpId() {
         return spId;
     }
-    public void setSpId(String spId) {
+    public void setSpId(int spId) {
         this.spId = spId;
     }
 

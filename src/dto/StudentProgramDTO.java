@@ -4,7 +4,7 @@ import entity.SuperEntity;
 
 public class StudentProgramDTO implements SuperEntity {
 
-    private String spId;
+    private int spId;
     private String date;
 
     private ProgramDTO program;
@@ -19,17 +19,17 @@ public class StudentProgramDTO implements SuperEntity {
         this.setStudent(student);
     }
 
-    public StudentProgramDTO(String spId, String date, ProgramDTO program, StudentDTO student) {
+    public StudentProgramDTO(int spId, String date, ProgramDTO program, StudentDTO student) {
         this.setSpId(spId);
         this.setDate(date);
         this.setProgram(program);
         this.setStudent(student);
     }
 
-    public String getSpId() {
+    public int getSpId() {
         return spId;
     }
-    public void setSpId(String spId) {
+    public void setSpId(int spId) {
         this.spId = spId;
     }
 
