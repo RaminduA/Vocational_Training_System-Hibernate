@@ -54,7 +54,7 @@
       </AnchorPane>
       <AnchorPane layoutX="800.0" layoutY="150.0" prefHeight="53.0" prefWidth="280.0" styleClass="textPane" stylesheets="@../assets/styles/TextFieldStyles.css">
          <children>
-            <TextField fx:id="txtDOB" layoutX="13.0" layoutY="5.0" prefHeight="44.0" prefWidth="250.0" promptText="17/07/2000" styleClass="textField">
+            <TextField fx:id="txtDOB" layoutX="13.0" layoutY="5.0" prefHeight="44.0" prefWidth="250.0" promptText="17-07-2000" styleClass="textField">
                <font>
                   <Font size="19.0" />
                </font>

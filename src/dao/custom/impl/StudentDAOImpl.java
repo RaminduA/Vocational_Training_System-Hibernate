@@ -73,20 +73,33 @@ public class StudentDAOImpl implements StudentDAO {
         Session session = FactoryConfiguration.getInstance().getSession();
         Transaction transaction = session.beginTransaction();
 
-        NativeQuery query=session.createSQLQuery("SELECT sId FROM Student ORDER BY sId DESC LIMIT 1");
+        /*NativeQuery query=session.createSQLQuery("SELECT sId FROM Student");
         query.addEntity(Student.class);
-        List<String> lastId = query.list();
+        List<String> lastId = query.list();*/
+
+        Query query=session.createSQLQuery("SELECT sId FROM Student");
+        List<String> idList = query.list();
 
         transaction.commit();
         session.close();
 
-        System.out.println(lastId);
-        return lastId.size()==0? null:lastId.get(0);
+        System.out.println(idList);
+        return idList.size()==0? null:idList.get(idList.size()-1);
     }
 
 
     @Override
     public List<String> getAllIds() {
-        return null;
+        Session session = FactoryConfiguration.getInstance().getSession();
+        Transaction transaction = session.beginTransaction();
+
+        Query query=session.createSQLQuery("SELECT sId FROM Student");
+        List<String> idList = query.list();
+
+        transaction.commit();
+        session.close();
+
+        System.out.println(idList);
+        return idList.size()==0? null:idList;
     }
 }

@@ -26,8 +26,27 @@ public class RegisterStudentsBOImpl implements RegisterStudentsBO {
     }
 
     @Override
+    public boolean isExistStudent(String studentId) {
+        List<String> allIds = studentDAO.getAllIds();
+        if (allIds!=null) {
+            for (String id : allIds) {
+                if (studentId.equals(id)) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    @Override
     public boolean addStudentProgram(StudentProgramDTO studentProgramDTO) {
         return studentProgramDAO.add(new StudentProgram(studentProgramDTO.getDate(), programDAO.get(studentProgramDTO.getProgram().getId()), studentDAO.get(studentProgramDTO.getStudent().getsId())));
+    }
+
+    @Override
+    public StudentDTO getStudent(String sId) {
+        Student student = studentDAO.get(sId);
+        return new StudentDTO(student.getsId(), student.getName(), student.getDob(), student.getNic(), student.getAddress(), student.getContact(), student.getEmail());
     }
 
     @Override

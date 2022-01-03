@@ -65,7 +65,8 @@ public class RegisterStudentsViewController {
         StudentDTO student=new StudentDTO(txtStudentId.getText(), txtName.getText(), txtDOB.getText(), txtNIC.getText(), txtAddress.getText(), txtContact.getText(), txtEmail.getText());
         ProgramDTO program=new ProgramDTO(cmbProgramId.getValue(), txtProgram.getText(), txtDuration.getText(), Double.parseDouble(txtFee.getText()));
         StudentProgramDTO studentProgram=new StudentProgramDTO(new SimpleDateFormat("dd-MM-yyyy").format(new Date()), program, student);
-        if (registerStudentsBO.addStudent(student)) {
+        if (registerStudentsBO.isExistStudent(txtStudentId.getText())) {
+            student=registerStudentsBO.
             if (registerStudentsBO.addStudentProgram(studentProgram)) {
                 new Alert(Alert.AlertType.CONFIRMATION,"Registered...").show();
                 clearAllFields();
@@ -74,7 +75,17 @@ public class RegisterStudentsViewController {
                 new Alert(Alert.AlertType.WARNING,"Try again...").show();
             }
         }else{
-            new Alert(Alert.AlertType.WARNING,"Try again...").show();
+            if (registerStudentsBO.addStudent(student)) {
+                if (registerStudentsBO.addStudentProgram(studentProgram)) {
+                    new Alert(Alert.AlertType.CONFIRMATION,"Registered...").show();
+                    clearAllFields();
+                    setStudentId();
+                }else{
+                    new Alert(Alert.AlertType.WARNING,"Try again...").show();
+                }
+            }else{
+                new Alert(Alert.AlertType.WARNING,"Try again...").show();
+            }
         }
     }
     private void clearAllFields() {
