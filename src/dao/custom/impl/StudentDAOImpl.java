@@ -65,7 +65,15 @@ public class StudentDAOImpl implements StudentDAO {
 
     @Override
     public List<Student> getAll() {
-        return null;
+        Session session = FactoryConfiguration.getInstance().getSession();
+        Transaction transaction = session.beginTransaction();
+
+        Query query=session.createQuery("FROM Student");
+        List<Student> studentList = query.list();
+
+        transaction.commit();
+        session.close();
+        return studentList;
     }
 
     @Override

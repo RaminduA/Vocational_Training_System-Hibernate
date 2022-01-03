@@ -22,7 +22,7 @@ public class RegisterStudentsBOImpl implements RegisterStudentsBO {
 
     @Override
     public boolean addStudent(StudentDTO studentDTO) {
-        return studentDAO.add(new Student(studentDTO.getsId(), studentDTO.getName(), studentDTO.getDob(), studentDTO.getNic(), studentDTO.getAddress(), studentDTO.getContact(), studentDTO.getEmail()));
+        return studentDAO.add(new Student(studentDTO.getId(), studentDTO.getName(), studentDTO.getDob(), studentDTO.getNic(), studentDTO.getAddress(), studentDTO.getContact(), studentDTO.getEmail()));
     }
 
     @Override
@@ -40,7 +40,7 @@ public class RegisterStudentsBOImpl implements RegisterStudentsBO {
 
     @Override
     public boolean addStudentProgram(StudentProgramDTO studentProgramDTO) {
-        return studentProgramDAO.add(new StudentProgram(studentProgramDTO.getDate(), programDAO.get(studentProgramDTO.getProgram().getId()), studentDAO.get(studentProgramDTO.getStudent().getsId())));
+        return studentProgramDAO.add(new StudentProgram(studentProgramDTO.getDate(), programDAO.get(studentProgramDTO.getProgram().getId()), studentDAO.get(studentProgramDTO.getStudent().getId())));
     }
 
     @Override

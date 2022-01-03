@@ -6,7 +6,7 @@ import java.util.List;
 
 public class StudentDTO implements SuperEntity {
 
-    private String sId;
+    private String id;
     private String name;
     private String dob;
     private String nic;
@@ -19,8 +19,8 @@ public class StudentDTO implements SuperEntity {
     public StudentDTO() {
     }
 
-    public StudentDTO(String sId, String name, String dob, String nic, String address, String contact, String email) {
-        this.setsId(sId);
+    public StudentDTO(String id, String name, String dob, String nic, String address, String contact, String email) {
+        this.setId(id);
         this.setName(name);
         this.setDob(dob);
         this.setNic(nic);
@@ -29,8 +29,8 @@ public class StudentDTO implements SuperEntity {
         this.setEmail(email);
     }
 
-    public StudentDTO(String sId, String name, String dob, String nic, String address, String contact, String email, List<StudentProgramDTO> details) {
-        this.setsId(sId);
+    public StudentDTO(String id, String name, String dob, String nic, String address, String contact, String email, List<StudentProgramDTO> details) {
+        this.setId(id);
         this.setName(name);
         this.setDob(dob);
         this.setNic(nic);
@@ -40,11 +40,11 @@ public class StudentDTO implements SuperEntity {
         this.setDetails(details);
     }
 
-    public String getsId() {
-        return sId;
+    public String getId() {
+        return id;
     }
-    public void setsId(String sId) {
-        this.sId = sId;
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -99,7 +99,7 @@ public class StudentDTO implements SuperEntity {
     @Override
     public String toString() {
         return "Student{" +
-                "sId='" + getsId() + '\'' +
+                "id='" + getId() + '\'' +
                 ", name='" + getName() + '\'' +
                 ", dob='" + getDob() + '\'' +
                 ", nic='" + getNic() + '\'' +

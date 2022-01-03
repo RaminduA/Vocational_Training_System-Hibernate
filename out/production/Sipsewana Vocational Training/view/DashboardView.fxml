@@ -11,7 +11,14 @@
 
 <AnchorPane fx:id="dashboardContext" prefHeight="1080.0" prefWidth="1920.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.DashboardViewController">
    <children>
-      <AnchorPane fx:id="performanceContext" layoutX="400.0" layoutY="100.0" prefHeight="980.0" prefWidth="1520.0" style="-fx-background-color: white;" />
+      <AnchorPane fx:id="performanceContext" layoutX="400.0" layoutY="100.0" prefHeight="980.0" prefWidth="1520.0" style="-fx-background-color: #75ADE0;">
+         <children>
+            <ImageView fitHeight="980.0" fitWidth="1520.0" opacity="0.08" pickOnBounds="true">
+               <image>
+                  <Image url="@../assets/images/loginBG01.png" />
+               </image>
+            </ImageView>
+         </children></AnchorPane>
       <AnchorPane prefHeight="100.0" prefWidth="1920.0" style="-fx-background-color: #b8d5ff;">
          <children>
             <Label fx:id="lblDate" layoutX="629.0" layoutY="21.0" prefHeight="54.0" prefWidth="690.0" text="Wednesday, 15 September 2020" textFill="#1c3148">

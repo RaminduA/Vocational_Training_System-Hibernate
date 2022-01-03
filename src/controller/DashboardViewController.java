@@ -55,7 +55,7 @@ public class DashboardViewController {
     }
 
     public void viewStudentDetailsOnAction(ActionEvent actionEvent) throws IOException {
-
+        performanceContext.getChildren().add(FXMLLoader.load(getClass().getResource("../view/ViewStudentDetailsView.fxml")));
     }
 
     public void manageProgramsOnAction(ActionEvent actionEvent) throws IOException {

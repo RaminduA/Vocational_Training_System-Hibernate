@@ -6,7 +6,6 @@ import dao.custom.ProgramDAO;
 import dao.custom.StudentProgramDAO;
 import dto.ProgramDTO;
 import entity.Program;
-import entity.StudentProgram;
 
 import java.util.ArrayList;
 import java.util.List;
